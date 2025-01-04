@@ -200,13 +200,13 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Royal Oud Paris',
             type: '100ml Eau de Parfum',
             price: 399,
-            image: 'images/main.jpg'
+            image: 'main.jpg'
         },
         tester: {
             name: 'Royal Oud Paris - Tester',
             type: '10ml Eau de Parfum Tester',
             price: 49,
-            image: 'images/tester.jpg'
+            image: 'tester.jpg'
         }
     };
 
